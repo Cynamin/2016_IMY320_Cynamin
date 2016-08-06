@@ -3,7 +3,7 @@
 
 The name of the NGO is **Threads** which is NGO dedicated to providing clothes to the homeless.
 
-#The Technology Stack
+#The Technology
 The technologies that will be used to make the website and the mobile app will be React (React Native for the Mobile App) and Redux for the data store and Redux-Sagas for handling async code in the frontend and the backend will be written in JavaScript using NodeJS and Express
 
 ##On the front end we have...
@@ -18,7 +18,7 @@ Redux is defined as a __Predictable State Container for JavaScript apps__. It al
 Changes the store are done via emitting actions (and object that describe what happened that should cause the state to change).
 Reducers (functions that modify the part of the state to which they are assigned) __specify how the actions change the state__.
 
-###Redux Saga?
+###Redux Saga
 Redux sags is a library for handling asynchronous code using the ES6 Generators to make asynchronous flow easier to read, write and test (avoids callback hell) because the asynchronous code looks like synchronous code.
 
 ##And on the backend we have...
@@ -27,3 +27,8 @@ Node.js is a JavaScript runtime environment built on the V8 JavaScript engine (N
 
 ###Express
 A NodeJs Framework for building http servers using JS. This will be used as an API for both the mobile and the web app.
+
+##Group Members
+Tula Raphala and all his split personalities
+
+
