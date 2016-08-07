@@ -25,10 +25,11 @@ Redux sags is a library for handling asynchronous code using the ES6 Generators 
 ###Node.js
 Node.js is a JavaScript runtime environment built on the V8 JavaScript engine (NodeJs is really just a platform that allows developers to write JS outside of a browser). It is event driven and uses a non-blocking I/O model.
 
-###Express
+###Koa
 A NodeJs Framework for building http servers using JS. This will be used as an API for both the mobile and the web app.
+
+###Webpack Dev Server
+A webpack developement server for allowing hot reloading of code. Unlike live reload or equivalents which reloads the browser, hot reloading code plugs new code changes without needing a refresh by using webpack's Hot Module Replacement.
 
 ##Group Members
 Tula Raphala and all his split personalities
-
-
