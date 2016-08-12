@@ -1,0 +1,11 @@
+@import '../../style/var';
+@import '../../style/extends';
+
+.container{
+	margin-top: $navHeight;
+	width: 100%;
+	padding: 0px $gutter;
+	&:after{
+		@extend clearfix;
+	}
+}

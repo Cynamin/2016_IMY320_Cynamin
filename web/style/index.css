@@ -1,0 +1,17 @@
+@import 'font';
+@import 'font-awesome';
+@import 'reset';
+@import 'var';
+
+*{
+	box-sizing: border-box;
+}
+body{
+	font-size: 18px;
+	color: $fontColor;
+	font-family: PTSans;
+}
+h1{
+	font-size: $header;
+	margin-bottom: $gutter;
+}

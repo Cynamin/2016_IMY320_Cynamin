@@ -1,0 +1,14 @@
+@import '../../../style/var';
+
+.nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 56px;
+	box-shadow: $shadowOne;
+	z-index: 2;
+	padding: 0 $gutter;
+	font-size: 1em;
+	line-height: $line;
+}

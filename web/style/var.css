@@ -1,0 +1,15 @@
+$fontSize: 1em;
+$fontColor: color(rgb(51, 51, 51) lightness(20%));
+$header: 1.5em;
+$subHeader: 1.1em;
+
+$shadowColor: rgba(0, 0, 0, 0.3);
+$shadowOne: 0 2px 15px $shadowColor;
+$shadowTwo: 0 1px 15px $shadowColor;
+$borderColor: rgb(180, 180, 180);
+$primaryColor: rgb(249, 127, 82);
+$gutter: 20px;
+
+$anim: 0.2s ease-in-out;
+$navHeight: 56px;
+$line: calc($navHeight - 1px);
