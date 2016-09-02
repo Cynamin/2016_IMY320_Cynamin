@@ -1,23 +1,33 @@
 @import '../../../../style/var';
+@import '../../../../style/mixins';
 
-@define-mixin button $name, $color, $fontColor: #fff, $fontSize: 16px, $border: 0, $borderRadius: 0px, $padding: 0, $width: auto{
-	.$(name){
-		background-color: $color;
-		color: $fontColor;
-		border: $border;
-		border-radius: $borderRadius;
-		padding: $padding;
-		font-size: $fontSize;
-		letter-spacing: 1px;
-		width: $width;
-		cursor: pointer;
-		transition: background-color 0.3s ease-in-out;
-		&:hover{
-			background-color: color($color lightness(-10%));
-		}
-		&:focus{
-			outline: 0;
-			background-color: color($color lightness(-10%));
-		}
+@mixin btn default, $primaryColor, $bodyColor2, false{}
+@mixin btn disabled, color($bodyColor lightness(95%)), color($fontColor lightness(50%)), true{}
+.addEvent, .addNews{
+	border: 0;
+	font-size: 1.8em;
+	width: 70px;
+	height: 70px;
+	border-radius: 35px;
+	color: $bodyColor2;
+	background-color: $primaryColor;
+	box-shadow: $shadowOne;
+	transition: background-color $anim;
+	cursor: pointer;
+	&:hover{
+		background-color: color($primaryColor lightness(-10%));
 	}
+	&:focus{
+		outline: 0;
+	}
+	&:active{
+		background-color: color($primaryColor lightness(-20%));
+	}
+}
+.addEvent{
+	margin-left: $gutter;
+	margin-right: calc($gutter / 2);
+}
+.addNews{
+	margin-left: calc($gutter / 2);
 }

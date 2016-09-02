@@ -1,32 +1,21 @@
 import reducer from '../utils/formUtils'
-import { call, select } from 'redux-saga/effects'
-export const SIGNIN_CHANGE = 'SIGNIN_CHANGE'
-export const SIGNIN_CLEAR = 'SIGNIN_CLEAR'
-export const SIGNIN_VALIDATE = 'SIGNIN_VALIDATE'
+import createAction from '../utils/createAction'
+
+export const CHANGE_SIGNIN = 'CHANGE_SIGNIN'
+export const VALIDATE_SIGNIN = 'VALIDATE_SIGNIN'
 export const SIGNIN_VALIDATE_FAIL = 'SIGNIN_VALIDATE_FAIL'
-export const SIGNIN_REQUEST = 'SIGNIN_REQUEST'
-/*export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS'
-export const SIGNIN_FAIL = 'SIGNIN_FAIL'*/
+export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS'
+export const SIGNIN_FAIL = 'SIGNIN_FAIL'
+export const CLEAR_SIGNIN = 'CLEAR_SIGNIN'
 
-export function signinChange(key, value){
-	return { type: SIGNIN_CHANGE, payload: { key, value} }
-}
+export const getSignin = (state) => state.forms.signin.data
 
-export function signinClear(){
-	return { type: SIGNIN_CLEAR }
-}
-
-export function signinValidate(){
-	return { type: SIGNIN_VALIDATE }
-}
-
-export function signinValidateFail(){
-	return { type:  SIGNIN_VALIDATE_FAIL }
-}
-
-export function signinRequest(){
-	return { type: SIGNIN_REQUEST }
-}
+export const changeSignin = createAction(CHANGE_SIGNIN, true)
+export const validateSignin = createAction(VALIDATE_SIGNIN)
+export const signinValidateFail = createAction(SIGNIN_VALIDATE_FAIL, true)
+export const signinSuccess = createAction(SIGNIN_SUCCESS, true)
+export const signinFail = createAction(SIGNIN_FAIL, true)
+export const clearSignin = createAction(CLEAR_SIGNIN)
 
 function create(){
 	const initialState = {
@@ -37,9 +26,9 @@ function create(){
 			pass: ''
 		},
 		errors: undefined
-	};
+	}
 
-	return reducer(initialState, [SIGNIN_CHANGE, SIGNIN_CLEAR, SIGNIN_VALIDATE_FAIL])
+	return reducer(initialState, [CHANGE_SIGNIN, CLEAR_SIGNIN, SIGNIN_VALIDATE_FAIL])
 }
 
 export default create()

@@ -42,7 +42,7 @@ switch (process.env.npm_lifecycle_event){
 			common,
 			{
 				entry: {
-					app: paths.app,
+					app: [ 'babel-polyfill', paths.app],
 					vendor: ['react']
 				},
 				devtool: 'cheap-module-source-map',
@@ -68,7 +68,7 @@ switch (process.env.npm_lifecycle_event){
 				entry: {
 					app: [
 						'react-hot-loader/patch',
-						'babel-regenerator-runtime',
+						'babel-polyfill',
 						'webpack-dev-server/client?http://localhost:8081',
 						'webpack/hot/only-dev-server',
 						paths.app

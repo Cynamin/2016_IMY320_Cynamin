@@ -1,0 +1,104 @@
+@import '../../../style/var';
+@import '../../../style/extends';
+@import '../../../style/mixins';
+
+.modal{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-color: $modalBack;
+}
+.form{
+	position: fixed;
+	width: 50%;
+	margin: 150px 25%;
+	padding: calc($gutter * 1.5);
+	color: $fontColor;
+	background-color: $bodyColor2;
+	z-index: 2;
+	font-size: 18px;
+	i{
+		position: absolute;
+		right: calc($gutter * 1.5);
+		top: calc($gutter * 1.5);
+		font-size: 1.5em;
+		transition: color $anim;
+		cursor: pointer;
+		&:hover{
+			color: color($fontColor lightness(50%));
+		}
+	}
+}
+.dropzone{
+	position: relative;
+	padding-top: calc($gutter / 2);
+	margin-bottom: $gutter;
+	div{
+		width: 100% !important;
+		border: 2px dashed $bodyColor !important;
+		border-radius: 0 !important;
+	}
+	p{
+		text-align: center;
+		margin-top: calc($gutter * 4);
+		font-size: 1.5em;
+	}
+}
+.dateInputs{
+	@extend formGroup;
+	margin-left: calc(-$gutter / 2);
+	margin-right: calc(-$gutter / 2);
+	&:after{
+		@extend clearfix;
+	}
+}
+.textInputHalf{
+	position: relative;
+	float: left;
+	width: 50%;
+	padding-left: calc($gutter / 2);
+	padding-right: calc($gutter / 2);
+	label{
+		@extend label;
+	}
+	input{
+		@extend input;
+		&:focus{
+			@extend inputFocus;
+		}
+	}
+}
+@mixin formGroup{}
+@mixin textInput{}
+:global{
+	.react-datepicker{
+		font-family: Roboto !important;
+		font-size: 16px !important;
+		border-radius: 0 !important;
+	}
+	.react-datepicker__header{
+		background-color: $bodyColor !important;
+	}
+	.react-datepicker__current-month{
+		font-size: 1.1em !important;
+		font-weight: 400 !important;
+		padding-bottom: calc($gutter / 4) !important;
+	}
+	.react-datepicker__day--selected, .react-datepicker__day--in-range{
+		background-color: $primaryColor !important;
+		border-radius: 0 !important;
+	}
+	.react-datepicker__navigation--previous{
+		border-right-color: $primaryColor !important;
+	}
+	.react-datepicker__navigation--next{
+		border-left-color: $primaryColor!important;
+	}
+	.react-datepicker__tether-element-attached-top .react-datepicker__triangle,
+	.react-datepicker__tether-element-attached-top .react-datepicker__triangle::before{
+		border-bottom-color: $bodyColor!important;
+	}
+}

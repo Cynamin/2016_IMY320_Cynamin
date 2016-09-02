@@ -1,0 +1,14 @@
+@import '../../../style/var';
+@import '../../../style/extends';
+@import '../../../style/mixins';
+
+.container{
+	@extend container;
+}
+.spread{
+	@extend spread;
+}
+.img{
+	@extend spreadImg;
+}
+@mixin spreadHead{}

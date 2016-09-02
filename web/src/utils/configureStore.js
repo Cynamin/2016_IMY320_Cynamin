@@ -1,19 +1,16 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { validator } from '../middleware/validator'
+import { router5Middleware } from 'redux-router5'
 import { rootReducer } from '../modules'
+import saga from '../sagas'
 
-export default (initialState) => {
+export default (initialState, router) => {
+	const sagaMiddleware = createSagaMiddleware()
 	const store = createStore(rootReducer, initialState, compose(
-		applyMiddleware(validator),
+		applyMiddleware(sagaMiddleware, router5Middleware(router)),
 		window.devToolsExtension ? window.devToolsExtension() : f => f
 	))
-	if (module.hot) {
-		module.hot.accept('../modules', () => {
-			const nextRootReducer = require('../modules').default
-			store.replaceReducer(nextRootReducer)
-	  	})
-	}
+	sagaMiddleware.run(saga)
 	return store
 }
 

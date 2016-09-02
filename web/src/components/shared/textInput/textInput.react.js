@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import styles from'./textInput.css'
 
 class textInput extends React.Component{
 	constructor(props){

@@ -2,10 +2,9 @@ var express = require('express')
 var app = express()
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
-var user = require('./models/user')
 var router = require('./routes/routes')(express)
-
-mongoose.connect('mongodb://127.0.0.1:27017')
+mongoose.Promise = require('bluebird')
+mongoose.connect('mongodb://127.0.0.1:27017/threads')
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())

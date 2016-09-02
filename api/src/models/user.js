@@ -5,7 +5,7 @@ var UserSchema = new Schema({
 	fname: String,
 	lname: String,
 	email: String,
-	pass: String
+	pass: { type: String, select: false }
 })
 
 module.exports = mongoose.model('User', UserSchema)

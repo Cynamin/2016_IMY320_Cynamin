@@ -1,6 +1,8 @@
 @import 'font';
 @import 'font-awesome';
 @import 'reset';
+@import 'calendar';
+@import 'datepicker';
 @import 'var';
 
 *{
@@ -9,9 +11,10 @@
 body{
 	font-size: 18px;
 	color: $fontColor;
-	font-family: PTSans;
+	font-family: Roboto;
+	background-color: $bodyColor;
 }
 h1{
-	font-size: $header;
+	font-size: $pageHeader;
 	margin-bottom: $gutter;
 }

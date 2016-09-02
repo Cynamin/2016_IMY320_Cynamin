@@ -1,14 +1,18 @@
 $fontSize: 1em;
-$fontColor: color(rgb(51, 51, 51) lightness(20%));
-$header: 1.5em;
-$subHeader: 1.1em;
+$fontColor: color(rgb(51, 51, 51) lightness(30%));
+$pageHeader: 2em;
+$subHeader: 1.5em;
 
 $shadowColor: rgba(0, 0, 0, 0.3);
-$shadowOne: 0 2px 15px $shadowColor;
-$shadowTwo: 0 1px 15px $shadowColor;
-$borderColor: rgb(180, 180, 180);
-$primaryColor: rgb(249, 127, 82);
+$shadowOne: 0 2px 8px $shadowColor;
 $gutter: 20px;
+
+$modalBack: rgba(51, 51, 51, 0.9);
+$borderColor: rgb(180, 180, 180);
+$bodyColor: color(rgb(235, 237, 234) lightness(-10%));
+$bodyColor2: rgb(255, 255, 255);
+$inputColor: rgb(225, 225, 219);
+$primaryColor: rgb(249, 127, 82);
 
 $anim: 0.2s ease-in-out;
 $navHeight: 56px;

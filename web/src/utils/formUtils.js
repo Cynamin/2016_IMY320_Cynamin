@@ -4,45 +4,32 @@ export function formMapStateToProps(key){
 	}
 }
 
-export function formMapDispatchToProps({formChange, formSubmit}){
+export function formMapDispatchToProps([change, submit, close]){
 	return (dispatch) => {
 		return {
-			onChange: (key, value) => dispatch(formChange(key, value)),
-			onSubmit: (evt) => {
+			change: (key, value) => {
+				dispatch(change({key, value}))
+			},
+			submit: (evt) => {
 				evt.preventDefault()
-				dispatch(formSubmit())
+				dispatch(submit())
+			},
+			close: () => {
+				dispatch(close())
 			}
 		}
 	}
 }
 
-
-export function validate(){
-	const validateText = (field) => {
-		if (field === '' || field === null)
-			return false
-		else
-			return true
-	}
-
-	const validateEmail = (first) => {
-		return (email) => {
-			if (first(email)){
-				if (email.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/) === null)
-					return false
-				else
-					return true
-			}
-			else
-				return false
-		}
-	}
+export function validator(){
+	const validateText = (field) => field === '' || field === null
+	const validateEmail = (field) => field.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/) === null
 
 	return (fields) => {
 		let results = {}
 		Object.keys(fields).forEach((key) => {
 			if (key === 'email')
-				results[key] = validateEmail(validateText)(fields[key])
+				results[key] = validateEmail(fields[key])
 			else
 				results[key] = validateText(fields[key])
 		})
@@ -50,8 +37,8 @@ export function validate(){
 	}
 }
 
-export default (intialState, [change, clear, fail]) =>
-	(state = intialState, action) => {
+export default(intialState, [change, clear, fail]) => {
+	return (state = intialState, action) => {
 		let merge = require('deepmerge')
 		let payload = action.payload
 		switch (action.type){
@@ -65,3 +52,4 @@ export default (intialState, [change, clear, fail]) =>
 				return state;
 		}
 	}
+}

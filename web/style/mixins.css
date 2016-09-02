@@ -1,0 +1,81 @@
+@import 'var';
+@import 'extends';
+
+@define-mixin link $class, $color ,$back{
+	.$(class){
+		cursor: pointer;
+		@if $back  == true {
+			transition: background-color $anim;
+			&:hover{
+				background-color: $color
+			}
+			@mixin-content;
+		}
+		@else{
+			transition: color $anim;
+			&:hover{
+				color: $color;
+			}
+			@mixin-content;
+		}
+	}
+}
+@define-mixin btn $name, $backColor, $color, $disabled{
+	.$(name){
+		@extend button;
+		&:hover{
+			background-color: color($backColor lightness(-10%));
+		}
+		&:focus{
+			outline: 0;
+		}
+		&:active{
+			background-color: color($backColor lightness(-20%));
+		}
+
+	}
+}
+@define-mixin spreadHead{
+	.spreadHead{
+		position: absolute;
+		font-family: Lato;
+		max-width: 50%;
+		color: #fff;
+		top: 0;
+		left: 0;
+		padding-top: calc($gutter * 2);
+		padding-left: $gutter;
+		font-size: 3em;
+		line-height: 1.3em;
+		font-weight: 700;
+	}
+}
+@define-mixin textInput{
+	.textInput{
+		margin-bottom: $gutter;
+		font-size: 18px;
+		label{
+			@extend label;
+		}
+		input{
+			@extend input;
+			&:focus{
+				@extend inputFocus;
+			}
+		}
+	}
+}
+@define-mixin formGroup{
+	.formGroup{
+		display: block;
+		font-size: 18px;
+		padding-top: calc($gutter / 2);
+		&:after{
+			@extend clearfix;
+		}
+		button{
+			float: right;
+			font-size: 1em;
+		}
+	}
+}

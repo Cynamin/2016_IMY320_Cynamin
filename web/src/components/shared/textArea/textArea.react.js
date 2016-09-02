@@ -7,8 +7,7 @@ class textArea extends React.Component{
 		this.change = this.change.bind(this);
 	}
 	change(evt){
-		console.log('Change')
-		this.props.onChange(evt.target.value);
+		this.props.onChange(this.props.name ,evt.target.value);
 	}
 	render(){
 		var { type, name, label, value } = this.props;
@@ -18,8 +17,7 @@ class textArea extends React.Component{
 				<div className={ styles.expandingArea }>
 					<label className={ styles.label } htmlFor={ name }>{ label }</label>
 					<pre className={ styles.mirror }><span>{ value }</span><br/></pre>
-					<textarea className={ styles.textarea } name={ name } onChange={ this.change } value={ value }></textarea>
-					<span className={ styles.borderBottom }></span>
+					<textarea className={ styles.textArea } name={ name } onChange={ this.change } value={ value }></textarea>
 				</div>
 			</div>
 		)

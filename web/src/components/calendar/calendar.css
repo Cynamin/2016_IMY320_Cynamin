@@ -1,0 +1,59 @@
+@import '../../../style/var';
+@import '../../../style/extends';
+
+.container{
+	@extend containerTwo;
+}
+.content{
+	@extend content;
+	height: 80vh;
+}
+:global{
+	.rbc-calendar{
+		background-color: $bodyColor2;
+		padding: calc($gutter * 1.5);
+		z-index: 1;
+		height: 100%;
+	}
+	.rbc-header{
+		padding: 5px 0;
+	}
+	.rbc-row-content{
+		z-index: 0 !important;
+	}
+	.rbc-toolbar{
+		margin-bottom: $gutter !important;
+	}
+	.rbc-toolbar-label{
+		font-size: $subHeader;
+	}
+	.rbc-btn-group{
+		.rbc-active{
+			color: $fontColor !important;
+			background-color: $bodyColor !important;
+		}
+		button{
+			@extend button;
+			border-radius: 0;
+			font-size: 1em;
+			&:hover{
+				background-color: color($primaryColor lightness(-10%));
+				color: $bodyColor2;
+			}
+			&:focus{
+				outline: 0;
+				color: $bodyColor2;
+				background-color: $primaryColor;
+			}
+			&:active{
+				background-color: color($primaryColor lightness(-20%));
+				color: $bodyColor2;
+			}
+		}
+	}
+	.rbc-event{
+		background-color: $primaryColor !important;
+		padding: 5px !important;
+		border-radius: 0 !important;
+	}
+}

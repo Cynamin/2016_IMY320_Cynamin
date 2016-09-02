@@ -1,10 +1,24 @@
 import { combineReducers } from 'redux'
+import { router5Reducer } from 'redux-router5'
 import login from './login'
 import signin from './signin'
+import contact from './contact'
+import createNews from './createNews'
+import createEvent from './createEvent'
+import ui from './ui'
+import events from './events'
+import user from './user'
 
 export const rootReducer = combineReducers({
+	ui,
+	router: router5Reducer,
 	forms: combineReducers({
-		login: login,
-		signin: signin
-	})
+		login,
+		signin,
+		contact,
+		news: createNews,
+		event: createEvent
+	}),
+	events,
+	user
 })

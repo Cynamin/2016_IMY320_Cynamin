@@ -1,0 +1,35 @@
+@import '../../../style/var';
+@import '../../../style/extends';
+@import '../../../style/mixins';
+
+.container{
+	@extend container;
+}
+.spread{
+	@extend spread;
+}
+.img{
+	@extend spreadImg;
+}
+@mixin spreadHead{}
+.content{
+	position: relative;
+	width: 50%;
+	margin-left: 25%;
+}
+.bodyCopy{
+	font-size: $fontSize;
+	line-height: 1.5em;
+	span{
+		font-family: Lato;
+		font-size: 1.8em;
+		font-weight: 700;
+	}
+}
+.catchPhrase{
+	font-family: Lato;
+	font-size: $pageHeader;
+	font-weight: 700;
+	text-align: center;
+	padding: 10px 0;
+}

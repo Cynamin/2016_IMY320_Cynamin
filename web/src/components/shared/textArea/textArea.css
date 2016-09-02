@@ -1,2 +1,45 @@
-@import '../../../../style/variables';
+@import '../../../../style/var';
 @import '../../../../style/extends';
+
+.formGroup{
+	position:  relative;
+	margin-bottom: calc($gutter + 10px);
+}
+.label{
+	@extend label;
+}
+.expandingArea{
+	position: relative;
+	width: 100%;
+	textarea, pre{
+		padding: 10px 7px 0 7px;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+}
+.mirror{
+	position: relative;
+	width: 100%;
+	top: 2px;
+	display: block;
+	line-height: 1em;
+}
+.textArea{
+	position: absolute;
+	width: 100%;
+	line-height: 1em;
+	height: calc(100% - 1em);
+	font-family: Roboto;
+	font-size: 1em;
+	overflow: hidden;
+	top: 30px;
+	left: 0;
+	resize: none;
+	color: $fontColor;
+	border: 0;
+	background-color: $bodyColor;
+	transition: background-color $anim;
+	&:focus{
+		@extend inputFocus;
+	}
+}

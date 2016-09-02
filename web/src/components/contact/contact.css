@@ -1,0 +1,21 @@
+@import '../../../style/var';
+@import '../../../style/extends';
+@import '../../../style/mixins';
+
+.container{
+	@extend container;
+	margin-top: calc($navHeight + ($gutter * 3));
+}
+.content{
+	position: relative;
+	width: 50%;
+	margin-left: 25%;
+	background-color: $bodyColor2;
+	padding: calc($gutter * 1.5);
+}
+.bodyCopy{
+	margin-bottom: $gutter;
+	line-height: 1.5em;
+}
+@mixin formGroup{}
+@mixin textInput{}

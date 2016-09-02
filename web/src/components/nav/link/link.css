@@ -1,0 +1,28 @@
+@import '../../../../style/var';
+@import '../../../../style/mixins';
+@import '../../../../style/extends';
+
+@mixin link navItem, $primaryColor, false{
+	list-style: none;
+	float: left;
+	line-height: $navHeight;
+	font-size: 1em;
+	a{
+		@extend navLink;
+		transition: color $anim;
+		&:hover{
+			color: $primaryColor;
+		}
+	}
+}
+@mixin link navItemActive, $primaryColor, false{
+	float: left;
+	list-style: none;
+	line-height: $navHeight;
+	font-size: 1em;
+	a{
+		@extend navLink;
+		color: $primaryColor;
+		text-decoration: none;
+	}
+}

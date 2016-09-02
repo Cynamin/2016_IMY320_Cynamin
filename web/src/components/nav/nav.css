@@ -1,14 +1,59 @@
 @import '../../../style/var';
 
-.nav{
+.navBar{
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 56px;
-	box-shadow: $shadowOne;
 	z-index: 2;
-	padding: 0 $gutter;
-	font-size: 1em;
-	line-height: $line;
+	font-size: 0.9em;
+	padding-right: $gutter;
+	background-color: $bodyColor2;
+}
+.logo{
+	float: left;
+	cursor: pointer;
+	font-size: 1.5em;
+	font-family: Lato;
+	line-height: $navHeight;
+	background-color: $primaryColor;
+	a{
+		padding: 0 $gutter;
+		color: #fff;
+		text-decoration: none;
+		display: block;
+		font-weight: 700;
+	}
+}
+.secondaryNav{
+	float: right;
+	line-height: $navHeight;
+	margin-right: -$gutter;
+	a{
+		position: relative;
+		display: inline-block;
+		padding: 0 $gutter;
+		color: $fontColor;
+		text-decoration: none;
+		transition: color $anim;
+		cursor: pointer;
+		&:hover{
+			color: $primaryColor;
+		}
+	}
+	a:first-child:after{
+		content: '';
+		position: absolute;
+		width: 1px;
+		height: 50%;
+		top: 25%;
+		right: 0;
+		background-color: $primaryColor;
+	}
+}
+.tertiaryNav{
+	position: fixed;
+	left: 85%;
+	bottom: calc($gutter * 2);
 }

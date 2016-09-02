@@ -1,5 +1,74 @@
+@import 'var';
+
 @define-extend clearfix{
 	content: '';
 	display: table;
 	clear: both;
+}
+@define-extend navLink{
+	display: block;
+	padding: 0 $gutter;
+	text-decoration: none;
+	color: $fontColor;
+}
+@define-extend container{
+	margin-top: $navHeight;
+	margin-bottom: calc($gutter * 2);
+}
+@define-extend spread{
+position: relative;
+	background-color: #333;
+	margin-bottom: calc($gutter * 2);
+}
+@define-extend spreadImg{
+	position: relative;
+	width: 100%;
+	display: block;
+	opacity: 0.7;
+}
+@define-extend label{
+	margin-right: calc($gutter / 2);
+	margin-bottom: calc($gutter / 2);
+	display: block;
+	font-size: 1em;
+}
+@define-extend inputFocus{
+	outline: 0;
+	background-color: color($bodyColor lightness(85%));
+	box-shadow: $shadowOne;
+}
+@define-extend containerTwo{
+	margin-top: calc($navHeight + $gutter);
+	margin-bottom: calc($gutter * 2);
+}
+@define-extend content{
+	position: relative;
+	width: 70%;
+	margin-left: 15%;
+}
+@define-extend button{
+	background-color: $primaryColor !important;
+	font-family: inherit !important;
+	font-size: inherit !important;
+	color: $bodyColor2 !important;
+	padding: 10px 30px !important;
+	background-color: $primaryColor !important;
+	color: $bodyColor2 !important;
+	border: 0 !important;
+	transition: background-color $anim, color $anim !important;
+	cursor: pointer !important;
+}
+@define-extend formGroup{
+	margin-bottom: $gutter;
+	font-size: 18px;
+}
+@define-extend input{
+	width: 100%;
+	font-family: Roboto;
+	font-size: 1em;
+	border: 0;
+	padding: 7px;
+	color: $fontColor;
+	background-color: $bodyColor;
+	transition: background-color $anim;
 }
