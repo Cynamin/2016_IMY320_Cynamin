@@ -14,11 +14,12 @@
 @define-extend container{
 	margin-top: $navHeight;
 	margin-bottom: calc($gutter * 2);
+	margin-bottom: $gutter;
 }
 @define-extend spread{
 position: relative;
 	background-color: #333;
-	margin-bottom: calc($gutter * 2);
+	margin-bottom: calc($gutter * 1.5);
 }
 @define-extend spreadImg{
 	position: relative;
@@ -34,7 +35,7 @@ position: relative;
 }
 @define-extend inputFocus{
 	outline: 0;
-	background-color: color($bodyColor lightness(85%));
+	background-color: color($bodyColor lightness(90%));
 	box-shadow: $shadowOne;
 }
 @define-extend containerTwo{

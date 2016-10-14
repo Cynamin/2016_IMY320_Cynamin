@@ -11,4 +11,57 @@
 .img{
 	@extend spreadImg;
 }
+.content{
+	position: relative;
+	width: 70%;
+	margin-left: 15%;
+	&:after{
+		@extend clearfix;
+	}
+}
+.events{
+	position: relative;
+	float: left;
+	width: 40%;
+	padding: calc($gutter / 2);
+}
+.news{
+	position: relative;
+	float: left;
+	width: 60%;
+	padding: calc($gutter / 2);
+}
+.event{
+	padding: calc($gutter / 2);
+	background-color: $bodyColor2;
+	margin-bottom: calc($gutter / 2);
+	transition: background-color $anim;
+	cursor: pointer;
+	&:hover{
+		background-color: color($bodyColor2 lightness(92%))
+	}
+}
+.title{
+	text-align: center;
+	font-size: 1.5em;
+	margin-bottom: calc($gutter / 1.2);
+}
+.desc{
+	font-size: 1.1em;
+	margin-bottom: calc($gutter / 1.8);
+	font-style: italic;
+}
+.copy{
+	font-size: 0.95em;
+	margin-bottom: calc($gutter / 2);
+	span{
+		font-weight: bold;
+	}
+}
+.role{
+	margin-bottom: calc($gutter / 2);
+	span{
+		font-weight: 700;
+	}
+}
 @mixin spreadHead{}

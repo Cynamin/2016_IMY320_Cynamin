@@ -6,7 +6,6 @@ function create(){
 		fname: '',
 		lname: '',
 		email: '',
-		loggedIn: false
 	}
 
 	return (state = initialState, action) => {
@@ -14,9 +13,7 @@ function create(){
 		switch (action.type){
 			case LOGIN_SUCCESS:
 			case SIGNIN_SUCCESS:
-				console.log('Validation Succes')
-				console.log(payload)
-				return Object.assign({}, state, { fname: payload.fname, lname: payload.lname, email: payload.email, loggedIn: true })
+				return Object.assign({}, state, { fname: payload.fname, lname: payload.lname, email: payload.email })
 			default:
 				return state
 		}

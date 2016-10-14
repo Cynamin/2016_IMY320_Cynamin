@@ -1,8 +1,0 @@
-@import '../../../style/extends';
-
-.container{
-	@extend containerTwo;
-}
-.content{
-	@extend content;
-}

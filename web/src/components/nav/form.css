@@ -2,6 +2,13 @@
 @import '../../../style/extends';
 @import '../../../style/mixins';
 
+.container{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	z-index: 999;
+}
 .modal{
 	position: fixed;
 	width: 100%;
@@ -11,10 +18,32 @@
 	z-index: 1;
 	background-color: $modalBack;
 }
+.overflowForm{
+	position: absolute;
+	width: 50%;
+	margin: 50px 25%;
+	padding: calc($gutter * 1.5);
+	color: $fontColor;
+	background-color: $bodyColor2;
+	z-index: 2;
+	font-size: 18px;
+	overflow: auto;
+	i{
+		position: absolute;
+		right: calc($gutter * 1.5);
+		top: calc($gutter * 1.5);
+		font-size: 1.5em;
+		transition: color $anim;
+		cursor: pointer;
+		&:hover{
+			color: color($fontColor lightness(50%));
+		}
+	}
+}
 .form{
 	position: fixed;
 	width: 50%;
-	margin: 150px 25%;
+	margin: 50px 25%;
 	padding: calc($gutter * 1.5);
 	color: $fontColor;
 	background-color: $bodyColor2;
@@ -34,17 +63,23 @@
 }
 .dropzone{
 	position: relative;
-	padding-top: calc($gutter / 2);
+	margin-top: calc($gutter / 2);
 	margin-bottom: $gutter;
 	div{
 		width: 100% !important;
 		border: 2px dashed $bodyColor !important;
-		border-radius: 0 !important;
-	}
+		border-radius: 0 !important;	}
 	p{
 		text-align: center;
 		margin-top: calc($gutter * 4);
 		font-size: 1.5em;
+	}
+	img{
+		max-width: 100%;
+		max-height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: -1;
 	}
 }
 .dateInputs{
@@ -69,6 +104,12 @@
 		&:focus{
 			@extend inputFocus;
 		}
+	}
+}
+.role{
+	margin-bottom: $gutter;
+	h2{
+		margin-bottom: calc($gutter / 2.5)
 	}
 }
 @mixin formGroup{}

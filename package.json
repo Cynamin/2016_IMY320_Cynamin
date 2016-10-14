@@ -1,30 +1,17 @@
 {
   "name": "threads",
   "version": "0.0.1",
-  "description": "A web and mobile app platform for Threads, a NGO that helps find clothing for the homeless ",
   "private": true,
-  "main": "index.js",
   "scripts": {
     "start": "nodemon api/src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-server": "webpack-dev-server --port 8081 --config ./web/webpack.config.js",
-    "deploy": "webpack --config ./web/webpack.config.js"
+    "deploy": "webpack --config ./web/webpack.config.js",
+    "mobile": "node node_modules/react-native/local-cli/cli.js start"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/cynamin/2016_IMY320_Cynamin.git"
-  },
-  "keywords": [
-    "IMY",
-    "320",
-    "React",
-    "React-Native",
-    "Redux",
-    "Redux-Saga"
-  ],
-  "author": "Tula Raphala",
-  "license": "MIT",
   "dependencies": {
+    "react": "15.3.2",
+    "react-native": "0.34.0",
     "bluebird": "^3.4.5",
     "body-parser": "^1.15.2",
     "deepmerge": "^0.2.10",
@@ -35,7 +22,6 @@
     "mongoose": "^4.5.8",
     "react": "^15.3.0",
     "react-big-calendar": "^0.10.3",
-    "react-datepicker": "^0.29.0",
     "react-dom": "^15.3.0",
     "react-dropzone": "^3.5.3",
     "react-onclickoutside": "^5.3.3",
@@ -48,6 +34,8 @@
     "router5-history": "^3.0.4",
     "router5-listeners": "^3.0.0"
   },
+  "description": "The name of the NGO is **Threads** which is NGO dedicated to providing clothes to the homeless.",
+  "main": "index.android.js",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.13.2",
@@ -74,5 +62,15 @@
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.1",
     "webpack-validator": "^2.2.7"
-  }
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cynamin/2016_IMY320_Cynamin.git"
+  },
+  "author": "Tula Raphala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cynamin/2016_IMY320_Cynamin/issues"
+  },
+  "homepage": "https://github.com/cynamin/2016_IMY320_Cynamin#readme"
 }

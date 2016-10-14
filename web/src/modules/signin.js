@@ -15,20 +15,16 @@ export const validateSignin = createAction(VALIDATE_SIGNIN)
 export const signinValidateFail = createAction(SIGNIN_VALIDATE_FAIL, true)
 export const signinSuccess = createAction(SIGNIN_SUCCESS, true)
 export const signinFail = createAction(SIGNIN_FAIL, true)
-export const clearSignin = createAction(CLEAR_SIGNIN)
+export const clearSignin = createAction(CLEAR_SIGNIN, true)
 
-function create(){
-	const initialState = {
-		data: {
-			fname: '',
-			lname: '',
-			email: '',
-			pass: ''
-		},
-		errors: undefined
-	}
-
-	return reducer(initialState, [CHANGE_SIGNIN, CLEAR_SIGNIN, SIGNIN_VALIDATE_FAIL])
+export const initialState = {
+	data: {
+		fname: '',
+		lname: '',
+		email: '',
+		pass: ''
+	},
+	errors: undefined
 }
 
-export default create()
+export default reducer(initialState, [CHANGE_SIGNIN, CLEAR_SIGNIN, SIGNIN_VALIDATE_FAIL])

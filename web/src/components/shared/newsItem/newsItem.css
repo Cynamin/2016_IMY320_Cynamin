@@ -1,0 +1,23 @@
+@import '../../../../style/var';
+
+.content{
+	position: relative;
+	cursor: pointer;
+}
+.title{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	z-index: 1;
+	background-color: $bodyColor2;
+	padding: 5px 10px;
+	font-size: 1.5em;
+}
+.img{
+	position: relative;
+	top: 0;
+	width: 100%;
+	display: block;
+	max-width: 100%;
+	max-height: 300px;
+}

@@ -1,8 +1,8 @@
-const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const validate = require('webpack-validator')
+const path = require('path')
 const parts = require('../lib/webpack.parts')
 
 const paths = {
@@ -47,7 +47,8 @@ switch (process.env.npm_lifecycle_event){
 				},
 				devtool: 'cheap-module-source-map',
 				output: {
-					paths: paths.dist,
+					path: paths.dist,
+					filename: 'js/[name][chunkhash].js',
 					chunkFilename: '[chunkhash].js'
 				}
 			},
@@ -58,7 +59,8 @@ switch (process.env.npm_lifecycle_event){
 				name: 'vendor',
 				entries: ['react']
 			}),
-			parts.minify()
+			parts.minify(),
+			parts.clean(paths.dist)
 		)
 		break
 	default:

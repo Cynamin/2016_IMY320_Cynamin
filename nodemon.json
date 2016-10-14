@@ -1,0 +1,11 @@
+{
+	"verbose": true,
+	"ignore": [
+		".git/",
+		"web/",
+		"lib/",
+		"node-modules/",
+		"mobile/",
+		"api/assets/"
+	]
+}

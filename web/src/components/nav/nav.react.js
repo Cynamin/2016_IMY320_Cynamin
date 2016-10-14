@@ -6,6 +6,7 @@ import Login from './login/login.react'
 import Signin from './signin/signin.react'
 import CreateNews from './createNews/createNews.react'
 import CreateEvent from './createEvent/createEvent.react'
+import Event from './event/event.react'
 import Link from './link/link.react'
 import Button from '../shared/button/button.react'
 import styles from './nav.css'
@@ -17,13 +18,26 @@ class nav extends React.Component{
 	}
 	render(){
 		const props = { route: this.props.route, navigateTo: this.props.navigateTo }
-		const { loginOpen, signinOpen, createNewsOpen, loggedIn, createEventOpen, toggleSignin, toggleLogin, toggleCreateNews, toggleCreateEvent } = this.props
+		const {
+			loginOpen,
+			signinOpen,
+			createNewsOpen,
+			createEventOpen,
+			showCreateButtons,
+			authenticationControls,
+			toggleSignin,
+			toggleLogin,
+			toggleCreateNews,
+			toggleCreateEvent,
+			openEvent
+		} = this.props
 		return(
 			<div className={ styles.navBar }>
 				{ signinOpen ? <Signin/> : '' }
 				{ loginOpen ? <Login/> : '' }
 				{ createNewsOpen ?  <CreateNews/> : '' }
 				{ createEventOpen ? <CreateEvent/> : '' }
+				{ openEvent.open ? <Event/> : '' }
 				<div className={ styles.logo }><a href='/home'>Threads</a></div>
 				<ul className={ styles.nav }>
 					<Link router={ this.router } { ...props } name='home' linkName='Home'/>
@@ -33,21 +47,19 @@ class nav extends React.Component{
 					<Link router={ this.router } { ...props } name='contact' linkName='Contact Us'/>
 				</ul>
 				{
-					!loggedIn ?
+					authenticationControls ?
 					<ul className={ styles.secondaryNav }>
 						<a onClick={ toggleSignin }>Register</a>
 						<a onClick={ toggleLogin }>Log in</a>
 					</ul> : ''
 				}
-
 				{
-					loggedIn ?
+					showCreateButtons ?
 					<div className={ styles.tertiaryNav }>
 						<Button type='addEvent' onClick={ toggleCreateEvent }/>
 						<Button type='addNews' onClick={ toggleCreateNews }/>
 					</div> : ''
 				}
-
 			</div>
 		)
 	}
@@ -58,6 +70,15 @@ nav.contextTypes = {
 }
 
 export default connect(
-	state => ({ route: state.router.route.name, loginOpen: state.ui.loginOpen, signinOpen: state.ui.signinOpen, createNewsOpen: state.ui.createNewsOpen, createEventOpen: state.ui.createEventOpen, loggedIn: state.user.loggedIn }),
+	state => ({
+		route: state.router.route.name,
+		loginOpen: state.ui.loginOpen,
+		signinOpen: state.ui.signinOpen,
+		showCreateButtons: state.ui.showCreateButtons,
+		authenticationControls: state.ui.authenticationControls,
+		createNewsOpen: state.ui.createNewsOpen,
+		createEventOpen: state.ui.createEventOpen,
+		openEvent: state.ui.openEvent
+	}),
 	{ navigateTo: actions.navigateTo, toggleLogin, toggleSignin,  toggleCreateNews, toggleCreateEvent }
 )(nav)

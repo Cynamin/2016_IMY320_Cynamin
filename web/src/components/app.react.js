@@ -5,18 +5,18 @@ import Nav from './nav/nav.react'
 import Home from './home/home.react'
 import About from './about/about.react'
 import Contact from './contact/contact.react'
-import Events from './events/events.react'
 import News from './news/news.react'
 import Calendar from './calendar/calendar.react'
+import Open from './open/open.react'
 import styles from './app.css'
 
 const components = {
 	home: Home,
 	about: About,
 	contact: Contact,
-	events: Events,
 	news: News,
-	calendar: Calendar
+	calendar: Calendar,
+	open: Open
 }
 
 const app = ({ route }) => {

@@ -18,7 +18,7 @@ const contact = ({ values, change, submit }) => {
 				<p className={ styles.bodyCopy }>Feel free to contact us if you have any question.
 				<br/>We'll answer your questions as soon possible</p>
 				<form className={ styles.form }>
-					<TextInput type='text' style={ styles.textInput } name='name' label='Name' value={ name } onChange={ change }/>
+					<TextInput type='text' style={ styles.textInput } name='name' label='Name' value={ name } onChange={ change } autofocus={ true }/>
 					<TextInput type='email' style={ styles.textInput } name='email' label='Email' value={ email } onChange={ change }/>
 					<TextArea name='message' label='Message' value={ message } onChange={ change }/>
 					<div className={ styles.formGroup }>

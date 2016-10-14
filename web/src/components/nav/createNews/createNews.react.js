@@ -13,13 +13,13 @@ const newsForm = ({ values, change, submit, close }) => {
 	const { title, displayImg, content } = values.data
 	const { errors } = values
 	const drop = (file) => {
-		this.props.onChange('displayImg', file[0]);
+		change('displayImg', file[0]);
 	}
 	return (
-		<div>
+		<div className={ styles.container }>
 			<div className={ styles.modal } onClick={ close }>
 			</div>
-			<form className={ styles.form }>
+			<form className={ styles.overflowForm }>
 				<i className='fa fa-close' onClick={ close }></i>
 				<h1>Create a News Article</h1>
 				<TextInput type='title' style={ styles.textInput } name='title' label='Title' value={ title } onChange={ change }/>

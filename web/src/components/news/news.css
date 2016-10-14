@@ -6,3 +6,15 @@
 .content{
 	@extend content;
 }
+.newsContainer{
+	margin-left: calc(-$gutter / 2);
+	margin-right: calc(-$gutter / 2);
+	&:after{
+		@extend clearfix;
+	}
+}
+.half{
+	float: left;
+	width: 50%;
+	padding: calc($gutter / 2);
+}

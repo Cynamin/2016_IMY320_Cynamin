@@ -17,7 +17,7 @@ const login = ({ values, change, submit, close }) => {
 			<form className={ styles.form }>
 				<i className='fa fa-close' onClick={ close }></i>
 				<h1>Log In</h1>
-				<TextInput type='email' style={ styles.textInput } name='email' label='Email' value={ email } onChange={ change }/>
+				<TextInput type='email' style={ styles.textInput } name='email' label='Email' value={ email } onChange={ change } autofocus={ true }/>
 				<TextInput type='password' style={ styles.textInput } name='pass' label='Password' value={ pass } onChange={ change }/>
 				<div className={ styles.formGroup }>
 					<Button value='Log in' type='default' onClick={ submit }/>

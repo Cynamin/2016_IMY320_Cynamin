@@ -5,5 +5,6 @@ export default [
 	{ name: 'about', path: '/about' },
 	{ name: 'contact', path: '/contact' },
 	{ name: 'events', path: '/events' },
-	{ name: 'news', path: '/news' }
+	{ name: 'news', path: '/news' },
+	{ name: 'open' , path: '/news/:id' }
 ]

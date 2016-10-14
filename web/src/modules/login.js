@@ -15,18 +15,14 @@ export const validateLogin = createAction(VALIDATE_LOGIN)
 export const loginValidateFail = createAction(LOGIN_VALIDATE_FAIL, true)
 export const loginSuccess = createAction(LOGIN_SUCCESS, true)
 export const loginFail = createAction(LOGIN_FAIL)
-export const clearLogin = createAction(CLEAR_LOGIN)
+export const clearLogin = createAction(CLEAR_LOGIN, true)
 
-function create(){
-	const initialState = {
-		data: {
-			email: '',
-			pass: ''
-		},
-		errors: undefined
-	}
-
-	return reducer(initialState, [CHANGE_LOGIN, CLEAR_LOGIN, LOGIN_VALIDATE_FAIL])
+export const initialState = {
+	data: {
+		email: '',
+		pass: ''
+	},
+	errors: undefined
 }
 
-export default create()
+export default reducer(initialState, [CHANGE_LOGIN, CLEAR_LOGIN, LOGIN_VALIDATE_FAIL])

@@ -15,7 +15,7 @@ export const validateContact = createAction(VALIDATE_CONTACT)
 export const contactValidateFail = createAction(CONTACT_VALIDATE_FAIL)
 export const contactSuccess = createAction(CONTACT_SUCCESS, true)
 export const contactFail = createAction(CONTACT_FAIL)
-export const clearContact = createAction(CLEAR_CONTACT)
+export const clearContact = createAction(CLEAR_CONTACT, true)
 
 function create(){
 	const intialState = {

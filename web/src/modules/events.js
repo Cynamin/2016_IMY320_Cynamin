@@ -2,9 +2,11 @@ import createAction from '../utils/createAction'
 
 export const FETCH_EVENTS = 'FETCH_EVENTS'
 export const FETCH_EVENTS_SUCCESS = 'FETCH_EVENTS_SUCCESS'
+export const FETCH_EVENTS_FAIL = 'FETCH_EVENTS_FAIL'
 
 export const fetchEvents = createAction(FETCH_EVENTS)
-export const fetchEventSuccess = createAction(FETCH_EVENTS_SUCCESS, true)
+export const fetchEventsSuccess = createAction(FETCH_EVENTS_SUCCESS, true)
+export const fetchEventsFail = createAction(FETCH_EVENTS_FAIL, true)
 
 function create(){
 	const initialState = []
@@ -13,7 +15,7 @@ function create(){
 		const { payload } = action
 		switch(action.type){
 			case FETCH_EVENTS_SUCCESS:
-				return state.concat(payload)
+				return state = payload
 			default:
 				return state
 		}

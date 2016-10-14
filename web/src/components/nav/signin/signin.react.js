@@ -17,7 +17,7 @@ const signin = ({ values, change, submit, close }) => {
 			<form className={ styles.form }>
 				<i className='fa fa-close' onClick={ close }></i>
 				<h1 className={ styles.header }>Register</h1>
-				<TextInput type='text' style={ styles.textInput } name='fname' label='First Name' value={ fname } onChange= { change }/>
+				<TextInput type='text' style={ styles.textInput } name='fname' label='First Name' value={ fname } onChange= { change } autofocus={ true }/>
 				<TextInput type='text' style={ styles.textInput } name='lname' label='Last Name' value={ lname } onChange= { change }/>
 				<TextInput type='email' style={ styles.textInput } name='email' label='Email' value={ email } onChange= { change }/>
 				<TextInput type='password' style={ styles.textInput } name='pass' label='Password' value={ pass } onChange= { change }/>

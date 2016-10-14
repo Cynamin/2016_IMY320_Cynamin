@@ -7,7 +7,9 @@ import createNews from './createNews'
 import createEvent from './createEvent'
 import ui from './ui'
 import events from './events'
+import news from './news'
 import user from './user'
+import users from './users'
 
 export const rootReducer = combineReducers({
 	ui,
@@ -20,5 +22,7 @@ export const rootReducer = combineReducers({
 		event: createEvent
 	}),
 	events,
-	user
+	news,
+	user,
+	users
 })

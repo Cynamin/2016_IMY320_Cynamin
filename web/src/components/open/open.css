@@ -1,0 +1,29 @@
+@import '../../../style/var';
+@import '../../../style/extends';
+@import '../../../style/mixins';
+
+.container{
+	@extend container;
+}
+.spread{
+	@extend spread;
+}
+.img{
+	@extend spreadImg;
+	max-height: 500px;
+}
+@mixin spreadHead{}
+.content{
+	position: relative;
+	width: 50%;
+	margin-left: 25%;
+}
+.bodyCopy{
+	font-size: $fontSize;
+	line-height: 1.5em;
+	span{
+		font-family: Lato;
+		font-size: 1.8em;
+		font-weight: 700;
+	}
+}

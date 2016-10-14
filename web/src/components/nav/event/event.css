@@ -1,0 +1,41 @@
+@import '../../../../style/var';
+@import '../../../../style/extends';
+@import '../../../../style/mixins';
+
+.modal{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-color: $modalBack;
+}
+.event{
+	position: fixed;
+	width: 50%;
+	margin: 150px 25%;
+	padding: calc($gutter * 1.5);
+	color: $fontColor;
+	background-color: $bodyColor2;
+	z-index: 2;
+	font-size: 18px;
+	i{
+		position: absolute;
+		right: calc($gutter * 1.5);
+		top: calc($gutter * 1.5);
+		font-size: 1.5em;
+		transition: color $anim;
+		cursor: pointer;
+		&:hover{
+			color: color($fontColor lightness(50%));
+		}
+	}
+}
+.desc{
+	font-size: 1.2em;
+	margin-bottom: $gutter;
+}
+.content{
+	margin-bottom: $gutter;
+}

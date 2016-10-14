@@ -15,19 +15,20 @@ export const validateEvent = createAction(VALIDATE_EVENT)
 export const eventValidateFail = createAction(EVENT_VALIDATE_FAIL)
 export const eventSuccess = createAction(EVENT_SUCCESS, true)
 export const eventFail = createAction(EVENT_FAIL)
-export const clearEvent = createAction(CLEAR_EVENT)
+export const clearEvent = createAction(CLEAR_EVENT, true)
 
-function create(){
-	const intialState = {
-		data: {
-			title: '',
-			startDate: '',
-			endDate: ''
-		},
-		errors: undefined
-	}
-
-	return reducer(intialState, [CHANGE_EVENT, CLEAR_EVENT, EVENT_VALIDATE_FAIL])
+export const initialState = {
+	data: {
+		title: '',
+		startDate: '',
+		endDate: '',
+		desc: '',
+		manager: '',
+		decor: '',
+		marketing: '',
+		catering: ''
+	},
+	errors: undefined
 }
 
-export default create()
+export default reducer(initialState, [CHANGE_EVENT, CLEAR_EVENT, EVENT_VALIDATE_FAIL])

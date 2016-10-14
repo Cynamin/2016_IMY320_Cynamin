@@ -4,12 +4,14 @@ import { Provider } from 'react-redux'
 import { RouterProvider } from 'react-router5'
 import { AppContainer } from 'react-hot-loader'
 import configureStore from './utils/configureStore'
+import init from './utils/init'
 import createRouter from './router/router'
 import App from './components/app.react'
 import '../style/index.css'
 
 const router = createRouter(true)
 const store = configureStore({}, router)
+init(store)
 
 router.start(() => {
 	render(

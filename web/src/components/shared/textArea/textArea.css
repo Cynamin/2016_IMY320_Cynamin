@@ -15,6 +15,7 @@
 		padding: 10px 7px 0 7px;
 		white-space: pre-wrap;
 		word-wrap: break-word;
+		line-height: 1.4em;
 	}
 }
 .mirror{
@@ -27,7 +28,6 @@
 .textArea{
 	position: absolute;
 	width: 100%;
-	line-height: 1em;
 	height: calc(100% - 1em);
 	font-family: Roboto;
 	font-size: 1em;
